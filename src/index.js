@@ -6,10 +6,11 @@ const terminalLink = require('terminal-link')
 const clipboardy = require('clipboardy')
 const envCi = require('env-ci')
 
-async function makeReportFromError (e) {
-  const envInfosResult = await envinfo.run({
-    System: ['OS'],
-  }, { markdown: true })
+async function makeReportFromError (e, envInfosConfig = {
+  System: ['OS'],
+  Binaries: ['Node', 'Yarn', 'npm'],
+}) {
+  const envInfosResult = await envinfo.run(envInfosConfig, { markdown: true })
 
   return {
     error: {
@@ -61,7 +62,14 @@ function generateOutputFromIssueBody(user, repo, markdown) {
   console.log(errorMsg)
 }
 
+async function issueReporter(options) {
+  const report = await makeReportFromError(options.error)
+  const issueBody = makeIssueBodyFromReport(report)
+  generateOutputFromIssueBody(options.user, options.repo, issueBody)
+}
+
 module.exports = {
+  issueReporter,
   makeReportFromError,
   makeIssueBodyFromReport,
   generateOutputFromIssueBody

@@ -17,6 +17,7 @@ describe('Error reporter', () => {
       const error = new Error('Some error')
       const envInfosResult = await envinfo.run({
         System: ['OS'],
+        Binaries: ['Node', 'Yarn', 'npm'],
       }, { markdown: true })
       
       const result = await makeReportFromError(error)
@@ -24,9 +25,20 @@ describe('Error reporter', () => {
       expect(result.environment.title).toEqual('Environment')
       expect(result.environment.markdown).toEqual(envInfosResult)
     })
-  })
+
+    it('should return a correctly formatted env infos section with custom config for envInfos', async () => {
+      const error = new Error('Some error')
+      const envInfosParam = { Binaries: ['Yarn'] }
+      const envInfosResult = await envinfo.run(envInfosParam, { markdown: true })
+      
+      const result = await makeReportFromError(error, envInfosParam)
   
-  describe('makeIssueBodyFromReportu', () => {
+      expect(result.environment.title).toEqual('Environment')
+      expect(result.environment.markdown).toEqual(envInfosResult)
+    })
+  })
+
+  describe('makeIssueBodyFromReport', () => {
     it('should format a json error as markdown', () => {
       const errorReport = {
         error: {
