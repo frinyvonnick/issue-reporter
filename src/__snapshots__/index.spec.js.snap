@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error reporter Markdown formatter should format a json error as markdown 1`] = `
+exports[`Error reporter makeIssueBodyFromReportu should format a json error as markdown 1`] = `
 "## Stacktrace
 
 \`\`\`
