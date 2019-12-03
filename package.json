@@ -1,7 +1,7 @@
 {
   "name": "issue-reporter",
   "version": "0.0.1",
-  "description": "",
+  "description": "A lib that generates issue reports for unexcepted errors.",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
@@ -10,7 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/frinyvonnick/markdown-error-reporter.git"
   },
-  "author": "",
+  "author": {
+    "name": "Yvonnick FRIN",
+    "email": "frin.yvonnick@gmail.com",
+    "url": "https://yvonnickfrin.dev"
+  },
+  "contributors": [
+    {
+      "name": "Franck ABGRALL",
+      "email": "abgrallkefran@gmail.com",
+      "url": "https://franck-abgrall.me"
+    }
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/frinyvonnick/markdown-error-reporter/issues"
@@ -26,5 +37,9 @@
     "handlebars": "^4.5.3",
     "new-github-issue-url": "^0.2.1",
     "terminal-link": "^2.0.0"
+  },
+  "engines": {
+    "npm": ">=5.5.0",
+    "node": ">=10.0.0"
   }
 }
