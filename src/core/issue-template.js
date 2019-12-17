@@ -10,4 +10,4 @@ module.exports = `## {{error.title}}
 {{#each sections}}
 {{print_section}}
 {{/each}}
-`
+`;
