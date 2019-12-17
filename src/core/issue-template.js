@@ -7,4 +7,7 @@ module.exports = `## {{error.title}}
 ## {{environment.title}}
 
 {{environment.markdown}}
+{{#each sections}}
+{{print_section}}
+{{/each}}
 `
