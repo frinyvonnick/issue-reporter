@@ -1,76 +1,76 @@
-const makeIssueBodyFromReport = require("./issue-body");
+const makeIssueBodyFromReport = require('./issue-body')
 
-describe("makeIssueBodyFromReport", () => {
-  it("should format a json error as markdown", () => {
+describe('makeIssueBodyFromReport', () => {
+  it('should format a json error as markdown', () => {
     const errorReport = {
       error: {
-        title: "Stacktrace",
-        stack: "Stack"
+        title: 'Stacktrace',
+        stack: 'Stack'
       },
       environment: {
-        title: "Environment",
-        markdown: "Environment markdown"
+        title: 'Environment',
+        markdown: 'Environment markdown'
       }
-    };
+    }
 
-    const result = makeIssueBodyFromReport({ errorReport });
+    const result = makeIssueBodyFromReport({ errorReport })
 
-    expect(result).toMatchSnapshot();
-  });
+    expect(result).toMatchSnapshot()
+  })
 
-  it("should format a json error as markdown", () => {
+  it('should format a json error as markdown', () => {
     const errorReport = {
       error: {
-        title: "Stacktrace",
-        stack: "Stack"
+        title: 'Stacktrace',
+        stack: 'Stack'
       },
       environment: {
-        title: "Environment",
-        markdown: "Environment markdown"
+        title: 'Environment',
+        markdown: 'Environment markdown'
       }
-    };
+    }
 
     const result = makeIssueBodyFromReport({
       errorReport,
       sections: [
         {
-          title: "Custom section",
+          title: 'Custom section',
           content: {
-            version: "1.0.1",
-            release: "2.0.0",
-            commit: "qwej79qwjeqw8euqo8wj8eq8"
+            version: '1.0.1',
+            release: '2.0.0',
+            commit: 'qwej79qwjeqw8euqo8wj8eq8'
           }
         },
         {
-          title: "Second section",
+          title: 'Second section',
           content: {
-            "awesome info": "it works"
+            'awesome info': 'it works'
           }
         }
       ]
-    });
+    })
 
-    expect(result).toMatchSnapshot();
-  });
+    expect(result).toMatchSnapshot()
+  })
 
-  it("should call user format function", () => {
+  it('should call user format function', () => {
     const errorReport = {
       error: {
-        title: "Stacktrace",
-        stack: "Stack"
+        title: 'Stacktrace',
+        stack: 'Stack'
       },
       environment: {
-        title: "Environment",
-        markdown: "Environment markdown"
+        title: 'Environment',
+        markdown: 'Environment markdown'
       }
-    };
+    }
 
-    const customFormat = "Custom format";
-    const formatReport = jest.fn(() => customFormat);
+    const customFormat = 'Custom format'
+    const formatReport = jest.fn(() => customFormat)
 
-    const result = makeIssueBodyFromReport({ errorReport, formatReport });
+    const result = makeIssueBodyFromReport({ errorReport, formatReport })
 
-    expect(formatReport).toHaveBeenCalledWith(errorReport);
-    expect(result).toBe(customFormat);
-  });
-});
+    expect(formatReport).toHaveBeenCalledWith(errorReport)
+    expect(result).toBe(customFormat)
+  })
+})
