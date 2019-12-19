@@ -1,0 +1,60 @@
+{
+  "name": "issue-reporter",
+  "version": "0.0.1",
+  "description": "A lib that generates issue reports for unexcepted errors.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write \"./src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frinyvonnick/markdown-error-reporter.git"
+  },
+  "author": {
+    "name": "Yvonnick FRIN",
+    "email": "frin.yvonnick@gmail.com",
+    "url": "https://yvonnickfrin.dev"
+  },
+  "contributors": [
+    {
+      "name": "Franck ABGRALL",
+      "email": "abgrallkefran@gmail.com",
+      "url": "https://franck-abgrall.me"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/frinyvonnick/markdown-error-reporter/issues"
+  },
+  "homepage": "https://github.com/frinyvonnick/markdown-error-reporter#readme",
+  "devDependencies": {
+    "husky": ">=1",
+    "jest": "^24.9.0",
+    "lint-staged": ">=8",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "clipboardy": "^2.1.0",
+    "env-ci": "^4.5.1",
+    "envinfo": "^7.5.0",
+    "handlebars": "^4.5.3",
+    "new-github-issue-url": "^0.2.1",
+    "terminal-link": "^2.0.0"
+  },
+  "engines": {
+    "npm": ">=5.5.0",
+    "node": ">=10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`makeIssueBodyFromReport should format a json error as markdown 1`] = `
+"## Stacktrace
+
+\`\`\`
+Stack
+\`\`\`
+
+## Environment
+
+Environment markdown
+"
+`;
+
+exports[`makeIssueBodyFromReport should format a json error as markdown 2`] = `
+"## Stacktrace
+
+\`\`\`
+Stack
+\`\`\`
+
+## Environment
+
+Environment markdown
+
+## Custom section
+
+- **version**: 1.0.1
+- **release**: 2.0.0
+- **commit**: qwej79qwjeqw8euqo8wj8eq8
+
+## Second section
+
+- **awesome info**: it works
+"
+`;
