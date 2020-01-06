@@ -34,7 +34,7 @@ yarn add issue-reporter
 
 ## Usage
 
-```sh
+```js
 const issueReporter = require('issue-reporter')
 
 async function main() {
@@ -77,7 +77,7 @@ In case of a CI it will print an url that opens a new issue on your project foll
 
 `issue-reporter` takes an extra option called `sections` that let you add information specific to your project. You can add as many sections as you want.
 
-```sh
+```js
 const issueReporter = require('issue-reporter')
 
 async function main() {
