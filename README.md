@@ -107,7 +107,7 @@ async function main() {
 
 `issue-reporter` has a default markdown formatter. If you want a more flexible way to format your error reporter you can provide your own formatting function.
 
-```sh
+```js
 const issueReporter = require('issue-reporter')
 
 async function main() {
