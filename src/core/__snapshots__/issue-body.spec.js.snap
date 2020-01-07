@@ -35,3 +35,20 @@ Environment markdown
 - **awesome info**: it works
 "
 `;
+
+exports[`makeIssueBodyFromReport should handle empty sections 1`] = `
+"## Stacktrace
+
+\`\`\`
+Stack
+\`\`\`
+
+## Environment
+
+Environment markdown
+
+## Second section
+
+- **awesome info**: it works
+"
+`;
