@@ -3,7 +3,7 @@ const makeIssueBodyFromReport = require('./core/issue-body')
 const generateOutputFromIssueBody = require('./core/output')
 
 module.exports = async function issueReporter(options) {
-  const errorReport = await makeReportFromError(options.error)
+  const errorReport = await makeReportFromError(options.error, options.envinfo)
   const issueBody = makeIssueBodyFromReport({
     errorReport,
     sections: options.sections
