@@ -68,6 +68,7 @@ In case of a CI it will print an url that opens a new issue on your project foll
 | error                   | An Error instance                                                                               | Error                      | required    |
 | user                    | You GitHub handle                                                                               | string                     | required    |
 | repo                    | The repository name of your project                                                             | string                     | required    |
+| envinfo                 | A [configuration](https://github.com/tabrindle/envinfo#programmatic-usage) object that is passed down to [envinfo](https://github.com/tabrindle/envinfo)                                                                               | Object                      | optional    |
 | sections                | Custom sections to add in the error report                                                      | Array<Object>              | optional    |
 | formatReport            | A function that allows to write your own error report template                                  | function                   | optional    |
 
