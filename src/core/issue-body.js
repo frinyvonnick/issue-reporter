@@ -3,7 +3,7 @@ const Handlebars = require('handlebars')
 
 module.exports = function makeIssueBodyFromReport({
   errorReport,
-  sections,
+  sections = [],
   formatReport
 }) {
   if (formatReport) return formatReport(errorReport)
@@ -32,6 +32,14 @@ module.exports = function makeIssueBodyFromReport({
   return compiler({
     error: errorReport.error,
     environment: errorReport.environment,
-    sections
+    sections: sections.filter(section => {
+      const hasContent = Boolean(section.content)
+      if (!hasContent) {
+        console.warn(
+          `⚠️  The section "${section.title}" is ${section.content}.`
+        )
+      }
+      return hasContent
+    })
   })
 }

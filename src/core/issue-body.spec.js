@@ -73,4 +73,35 @@ describe('makeIssueBodyFromReport', () => {
     expect(formatReport).toHaveBeenCalledWith(errorReport)
     expect(result).toBe(customFormat)
   })
+
+  it('should handle empty sections', () => {
+    const errorReport = {
+      error: {
+        title: 'Stacktrace',
+        stack: 'Stack'
+      },
+      environment: {
+        title: 'Environment',
+        markdown: 'Environment markdown'
+      }
+    }
+
+    const result = makeIssueBodyFromReport({
+      errorReport,
+      sections: [
+        {
+          title: 'Custom section',
+          content: null
+        },
+        {
+          title: 'Second section',
+          content: {
+            'awesome info': 'it works'
+          }
+        }
+      ]
+    })
+
+    expect(result).toMatchSnapshot()
+  })
 })
