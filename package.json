@@ -1,6 +1,6 @@
 {
   "name": "issue-reporter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A lib that generates issue reports for unexcepted errors.",
   "main": "src/index.js",
   "scripts": {
