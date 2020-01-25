@@ -25,9 +25,9 @@
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/frinyvonnick/markdown-error-reporter/issues"
+    "url": "https://github.com/frinyvonnick/issue-reporter/issues"
   },
-  "homepage": "https://github.com/frinyvonnick/markdown-error-reporter#readme",
+  "homepage": "https://github.com/frinyvonnick/issue-reporter#readme",
   "devDependencies": {
     "husky": ">=1",
     "jest": "^24.9.0",
